@@ -1,13 +1,23 @@
 iGotTime 
 ======
 
-##What is it?
+A super nice `angular js (ES6)` `timer`.
 
-A super nice `angular` `timer` or `watch`.
+##How to use
 
-##More
+- Clone or download
+- *if you don't have jspm : `npm install jspm -g`*
+- `npm install`
+- `jspm install`
+- `gulp`
 
->More content coming soon.
+
+##Histo
+
+**14 September 2015** : Initial module.
+
+>More content coming soon (*it just starts*).
+
 
  
 ##License
