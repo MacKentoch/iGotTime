@@ -5,19 +5,23 @@ A super nice `angular js (ES6)` `timer`.
 
 ##How to use
 
+*DEVELOPEMENT/DEMO* :
 - Clone or download
 - *if you don't have jspm : `npm install jspm -g`*
 - `npm install`
 - `jspm install`
 - `gulp`
 
+*PRODUCTION (or just want a simple js file)* :
+- `gulp jspmBuild:sfx` (or `gulp jspmBuild:sfx:min` for minified version)
+- get `iGotTime.js` (or `iGotTime.min.js`) file in ./dist directory
+- add it in a script tag as usual.
 
 ##Histo
 
 **14 September 2015** : Initial module.
 
 >More content coming soon (*it just starts*).
-
 
  
 ##License
