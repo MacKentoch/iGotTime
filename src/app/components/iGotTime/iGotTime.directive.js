@@ -16,7 +16,7 @@ function iGotTimeDirective() {
   function linkfct(){
     return (scope, element, attrs, ctrl, transclude) => {
       element.on('click', function(){
-        alert('don\'t tap this timer, it is delicate!');
+        console.log(`don't tap this timer, it is delicate!`);
       });      
     }
   }

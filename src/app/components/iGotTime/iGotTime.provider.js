@@ -4,14 +4,14 @@ function iGotTimeConfigProviderFct() {
 	this.customization 	= customizationFct;
 	this.setFontSize 		= setFontSizeFct;
 	/* jshint validthis:true */
-	this.$get = iGotTimeConfig;	
+	this.$get 					= iGotTimeConfig;	
 	
 	
 	
 	function customizationFct(){
 		return 	() => {
 			let _defaultConfig = {
-			fontSize : `12px`
+				fontSize : `12px`
 			}
 			return _defaultConfig;
 		}

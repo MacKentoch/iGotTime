@@ -1,3 +1,4 @@
+
 function appConfig(iGotTimeConfigProvider){
 	let fontSizeFromConfig = '22px';
 	
