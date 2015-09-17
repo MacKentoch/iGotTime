@@ -1,18 +1,22 @@
 const ONE_SECOND = 1000;
 
-class UserListController {
+class iGotTimeController {
   
   constructor($timeout, iGotTimeConfig) {
-    this.$timeout       = $timeout;
-    this.timer          = this.newTime();
-    this.timeoutPromise = {};
+    this.$timeout       = $timeout;    
     this.iGotTimeConfig = iGotTimeConfig;
-    
-    
-    //test provider is ok : set font size :
-    this.setFontSize('42px');
+       
+    this.init();
     //let's go infinite count :
     this.oneAnotherSec();
+  }
+  
+  init() {
+    this.timer          = this.newTime();    
+    this.timeoutPromise = {};
+    
+    this.setFontSize('42px');    
+    this.fontSize     = this.iGotTimeConfig.getFontSize();
   }
   
   newTime() {
@@ -33,11 +37,11 @@ class UserListController {
 
 }
 
-UserListController.$inject = [
+iGotTimeController.$inject = [
   '$timeout',
   'iGotTimeConfig'
 ];
 
-export default UserListController;
+export default iGotTimeController;
 
 
