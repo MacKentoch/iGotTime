@@ -1,30 +1,24 @@
 
 function iGotTimeConfigProviderFct() {
 	
-	let _customization 	= initCustomization();
-	
-	this.getFontSize 		= getFontSizeFct;
+	this.customization 	= customizationFct;
 	this.setFontSize 		= setFontSizeFct;
 	/* jshint validthis:true */
 	this.$get 					= iGotTimeConfig;	
 	
 	
 	
-	function initCustomization(){
-		let _defaultConfig = {
-			fontSize : `12px`
+	function customizationFct(){
+		return 	() => {
+			let _defaultConfig = {
+				fontSize : `12px`
+			}
+			return _defaultConfig;
 		}
-		return _defaultConfig;
 	} 
 
-
-
-	function getFontSizeFct(){
-		return _customization.fontSize;
-	}
-	
 	function setFontSizeFct(fontSize){
-		_customization.fontSize = fontSize; 
+		return (fontSize) => this.customization.fontSize = fontSize; 
 	}
 	
 	
@@ -34,19 +28,22 @@ function iGotTimeConfigProviderFct() {
 		
 		let service = {
 			getFontSize : getFontSizeFct,
-			setFontSize : setFontSizeFct
+			setFontSize : setFontSizefct
 		};
 		return service;
 		
 		
 		function getFontSizeFct(){
-			let actualFontSize = angular.copy(_customization.fontSize);
-			return actualFontSize;
+			return () => {
+				let actualFontSize = angular.copy(this.customization.fontSize);
+				return actualFontSize;
+			}
 		}
 		
-		function setFontSizeFct(fontSize){
-			_customization.fontSize = fontSize; 
+		function setFontSizefct(fontSize){
+			return (fontSize) => this.setFontSize(fontSize)
 		}
+		
 		
 		
 	}

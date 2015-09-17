@@ -1,9 +1,9 @@
+const FONT_SIZE_SETTING = '22px';
 
 function appConfig(iGotTimeConfigProvider){
-	let fontSizeFromConfig = '22px';
 	
-	iGotTimeConfigProvider.setFontSize(fontSizeFromConfig);
-	console.info(`from app config, setting font size = ${fontSizeFromConfig}`);
+	iGotTimeConfigProvider.setFontSize(FONT_SIZE_SETTING); //set font-size
+
 }
 
 
