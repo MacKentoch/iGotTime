@@ -15,8 +15,7 @@ class iGotTimeController {
     this.timer          = this.newTime();    
     this.timeoutPromise = {};
     
-    this.setFontSize('42px');    
-    this.fontSize     = this.iGotTimeConfig.getFontSize();
+    this.currentFontSize  = this.iGotTimeConfig.getFontSize();
   }
   
   newTime() {
@@ -30,10 +29,6 @@ class iGotTimeController {
     this.timeoutPromise = this.$timeout(() => this.oneAnotherSec(), ONE_SECOND);
   }
   
-  setFontSize(fontSize) {
-    console.info(`using provider from controller setting font to ${fontSize}`);
-    this.iGotTimeConfig.setFontSize(fontSize);
-  }
 
 }
 

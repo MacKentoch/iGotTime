@@ -1,7 +1,13 @@
+import {DEFAULT_SIZE_UNIT, DEFAULT_FONT_SIZE, applyFontSize} from './iGotTime.provider.helpers';
 
 function iGotTimeConfigProviderFct() {
-	
+
+
+	let _defaultConfig = {
+		fontSize : applyFontSize(DEFAULT_FONT_SIZE, DEFAULT_SIZE_UNIT)
+	}	
 	let _customization 	= initCustomization();
+	
 	
 	this.getFontSize 		= getFontSizeFct;
 	this.setFontSize 		= setFontSizeFct;
@@ -9,22 +15,24 @@ function iGotTimeConfigProviderFct() {
 	this.$get 					= iGotTimeConfig;	
 	
 	
-	
+	/**
+	 * applies default config to customization
+	 */
 	function initCustomization(){
-		let _defaultConfig = {
-			fontSize : `12px`
-		}
-		return _defaultConfig;
+		return angular.copy(_defaultConfig);
 	} 
-
-
 
 	function getFontSizeFct(){
 		return _customization.fontSize;
 	}
 	
-	function setFontSizeFct(fontSize){
-		_customization.fontSize = fontSize; 
+	function setFontSizeFct(targetFontSize, targetFontSizeUnit){
+		console.warn(`applyFontSize(targetFontSize, targetFontSizeUnit); 
+		= ${applyFontSize(targetFontSize, targetFontSizeUnit)} 
+		avec targetFontSize = ${targetFontSize}
+		et targetFontSizeUnit = ${targetFontSizeUnit}`);
+		
+		_customization.fontSize = applyFontSize(targetFontSize, targetFontSizeUnit); 
 	}
 	
 	
@@ -33,19 +41,30 @@ function iGotTimeConfigProviderFct() {
 	function iGotTimeConfig() {
 		
 		let service = {
-			getFontSize : getFontSizeFct,
-			setFontSize : setFontSizeFct
+			getDefaultFontSize 	: getDefaultFontSize,
+			getFontSize 				: getFontSizeFct,
+			setFontSize 				: setFontSizeFct
 		};
 		return service;
 		
 		
+		/**
+		 * return default font size value
+		 */
+		function getDefaultFontSize(){
+			return _defaultConfig.fontSize;
+		}
+		/**
+		 * retuns actual customized font size
+		 */
 		function getFontSizeFct(){
 			let actualFontSize = angular.copy(_customization.fontSize);
 			return actualFontSize;
 		}
-		
-		function setFontSizeFct(fontSize){
-			_customization.fontSize = fontSize; 
+		/**
+		 * set a new font size */	
+		function setFontSizeFct(targetFontSize, targetFontSizeUnit){
+			_customization.fontSize = applyFontSize(targetFontSize, targetFontSizeUnit); 
 		}
 		
 		

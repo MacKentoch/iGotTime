@@ -1,5 +1,5 @@
 import iGotTimeController from './iGotTime.controller';
-import iGotTimeTemplate from "./iGotTimeTemplate.html!text";
+import iGotTimeTemplate   from "./iGotTimeTemplate.html!text";
 
 function iGotTimeDirective() {
   let directive =  {
@@ -14,6 +14,11 @@ function iGotTimeDirective() {
   return directive;
   
   function linkfct(scope, element, attrs, ctrl, transclude){
+    
+    console.info('from directive, font size is : ' + scope.iGotTimeCtrl.currentFontSize);
+    
+    
+    
     const MESSAGE = `don't tap this timer, it is delicate!`;  
     element.on('click', () => console.log(MESSAGE));      
   }

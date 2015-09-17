@@ -1,4 +1,4 @@
-import iGotTimeDirective from './iGotTime.directive';
+import iGotTimeDirective 			from './iGotTime.directive';
 import iGotTimeConfigProvider from './iGotTime.provider';
 
 
