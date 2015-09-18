@@ -53,26 +53,21 @@ gulp.task('connect',  function() {
 /**
  * SASS task
  */
- //sass : stepway
  gulp.task('build:scss', 
-	 	//[], 
 		 function(){
-			 
 	//minified		 
-	// gulp.src(gulpConfig.components.iGotTime.css, { cwd: gulpConfig.bases.src })
-	// 	.pipe(sass().on('error', notify.onError(function (error) { return 'Error: ' + error.message;})))
-	// 	.pipe(concat(gulpConfig.destFiles.app.stepway.css))
-	// 	.pipe(cssmin())     
-	// 	.pipe(rename(gulpConfig.components.iGotTime.bundleCssName, {extname: '.min.css'}))    
-	// 	.pipe(gulp.dest(gulpConfig.destDirs.app.css, { cwd: gulpConfig.base.root }));
-
+	gulp.src(gulpConfig.bases.src + gulpConfig.components.iGotTime.css, 
+					{ cwd: gulpConfig.bases.root })
+		.pipe(sass().on('error', notify.onError(function (error) { return 'Error: ' + error.message;})))
+		.pipe(cssmin())   
+		.pipe(concat(gulpConfig.components.iGotTime.bundleCssName + '.min.css'))   
+		.pipe(gulp.dest(gulpConfig.bases.dist));
 	//not minified
 	gulp.src(gulpConfig.bases.src + gulpConfig.components.iGotTime.css, 
 					{ cwd: gulpConfig.bases.root })
 		.pipe(sass().on('error', notify.onError(function (error) { return 'Error: ' + error.message;})))
 		.pipe(concat(gulpConfig.components.iGotTime.bundleCssName + '.css'))   
 		.pipe(gulp.dest(gulpConfig.bases.dist));
-			 
  });
 
 
