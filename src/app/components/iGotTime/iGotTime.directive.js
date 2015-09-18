@@ -15,6 +15,15 @@ function iGotTimeDirective() {
   
   function linkfct(scope, element, attrs, ctrl, transclude){
     
+    scope.style = {};
+    
+    angular.extend(scope.style, {
+      fontSize: `font-size:${scope.iGotTimeCtrl.currentFontSize};`,
+      
+    });
+
+    
+      
     console.info('from directive, font size is : ' + scope.iGotTimeCtrl.currentFontSize);
     
     
