@@ -1,5 +1,6 @@
 import iGotTimeController from './iGotTime.controller';
-import iGotTimeTemplate   from "./iGotTimeTemplate.html!text";
+import iGotTimeTemplate   from './iGotTimeTemplate.html!text';
+import {iGotTimeTimerCss} from './iGotTimeTemplateCss';
 
 function iGotTimeDirective() {
   let directive =  {
@@ -15,11 +16,15 @@ function iGotTimeDirective() {
   
   function linkfct(scope, element, attrs, ctrl, transclude){
     
-    scope.style = {};
+    scope.customization = {}; //customization object
     
-    angular.extend(scope.style, {
-      fontSize: `font-size:${scope.iGotTimeCtrl.currentFontSize};`,
-      
+    angular.extend(scope.customization, {
+      style : {
+        fontSize: `font-size:${scope.iGotTimeCtrl.currentFontSize};`,  
+      },
+      cssClass : {
+        iGotTimeTimerClass : iGotTimeTimerCss
+      }
     });
 
     
