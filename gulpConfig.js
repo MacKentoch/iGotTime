@@ -11,7 +11,7 @@ module.exports = {
 		iGotTime : {
 			js : '',
 			
-			css : 'style/**.*scss',
+			css : 'style/**/*.scss',
 			cssDir : 'style/',
 			bundleCssName : 'iGotTime'
 		}

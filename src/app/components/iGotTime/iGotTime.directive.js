@@ -1,6 +1,6 @@
 import iGotTimeController from './iGotTime.controller';
 import iGotTimeTemplate   from './iGotTimeTemplate.html!text';
-import {iGotTimeTimerCss} from './iGotTimeTemplateCss';
+import {iGotTimeTimerCss} from './iGotTime.directive.const';
 
 function iGotTimeDirective() {
   let directive =  {

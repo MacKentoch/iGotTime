@@ -40,7 +40,7 @@ gulp.task('jspmBuild:sfx', function (cb) {
  * 
  * index.html is ready for developement version (no need to build)
  */
-gulp.task('connect', function() {
+gulp.task('connect',  function() {
   connect.server({
     port: 8080
   });
@@ -67,18 +67,16 @@ gulp.task('connect', function() {
 	// 	.pipe(gulp.dest(gulpConfig.destDirs.app.css, { cwd: gulpConfig.base.root }));
 
 	//not minified
-	gulp.src(gulpConfig.bases.src + gulpConfig.components.iGotTime.css, { cwd: gulpConfig.bases.root })
+	gulp.src(gulpConfig.bases.src + gulpConfig.components.iGotTime.css, 
+					{ cwd: gulpConfig.bases.root })
 		.pipe(sass().on('error', notify.onError(function (error) { return 'Error: ' + error.message;})))
-		.pipe(concat(gulpConfig.components.iGotTime.bundleCssName))
-    .pipe(rename(gulpConfig.components.iGotTime.bundleCssName, {extname: '.css'}))      
-		.pipe(gulp.dest(gulpConfig.bases.src + gulpConfig.components.iGotTime.cssDir));
-		
-		
+		.pipe(concat(gulpConfig.components.iGotTime.bundleCssName + '.css'))   
+		.pipe(gulp.dest(gulpConfig.bases.dist));
 			 
  });
 
 
 
-gulp.task('default', ['connect']);
+gulp.task('default', ['build:scss', 'connect']);
 
 
