@@ -555,17 +555,17 @@
 
 })(typeof self != 'undefined' ? self : global);
 
-$__System.registerDynamic("5", ["8"], true, function(require, exports, module) {
+$__System.registerDynamic("7", ["9"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = require("8");
+  module.exports = require("9");
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("8", [], false, function(__require, __exports, __module) {
+$__System.registerDynamic("9", [], false, function(__require, __exports, __module) {
   var _retrieveGlobal = $__System.get("@@global-helpers").prepareGlobal(__module.id, "angular", null);
   (function() {
     "format global";
@@ -11885,13 +11885,13 @@ $__System.registerDynamic("8", [], false, function(__require, __exports, __modul
   return _retrieveGlobal();
 });
 
-$__System.registerDynamic("b", ["d"], true, function(require, exports, module) {
+$__System.registerDynamic("d", ["f"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   "use strict";
-  var _Object$defineProperty = require("d")["default"];
+  var _Object$defineProperty = require("f")["default"];
   exports["default"] = (function() {
     function defineProperties(target, props) {
       for (var i = 0; i < props.length; i++) {
@@ -11916,7 +11916,7 @@ $__System.registerDynamic("b", ["d"], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("c", [], true, function(require, exports, module) {
+$__System.registerDynamic("e", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -11932,35 +11932,35 @@ $__System.registerDynamic("c", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("a", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = "<h1>\n\t<p>{{iGotTimeCtrl.timer | date: 'hh:mm:ss'}}</p>\t\n</h1>\n";
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("d", ["e"], true, function(require, exports, module) {
+$__System.registerDynamic("f", ["10"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = {
-    "default": require("e"),
+    "default": require("10"),
     __esModule: true
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("e", ["f"], true, function(require, exports, module) {
+$__System.registerDynamic("c", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var $ = require("f");
+  module.exports = "<h1>\n\t<p \tid=\"iGotTimeTimer\" \n\t\t\tstyle=\"{{customization.style.fontSize}}\"\n\t\t\tclass=\"{{customization.cssClass.iGotTimeTimerClass}}\">\n\t\t\t{{iGotTimeCtrl.timer | date: 'hh:mm:ss'}}\n\t</p>\t\n</h1>\n";
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("10", ["11"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var $ = require("11");
   module.exports = function defineProperty(it, key, desc) {
     return $.setDesc(it, key, desc);
   };
@@ -11968,7 +11968,7 @@ $__System.registerDynamic("e", ["f"], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("f", [], true, function(require, exports, module) {
+$__System.registerDynamic("11", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -12024,37 +12024,27 @@ $__System.register('1', ['2', '3', '4'], function (_export) {
 																				}
 										};
 });
-$__System.register('2', ['5'], function (_export) {
-  'use strict';
-
-  var angular;
-  return {
-    setters: [function (_) {
-      angular = _['default'];
-    }],
-    execute: function () {}
-  };
-});
 $__System.register('4', [], function (_export) {
 	'use strict';
 
-	function appConfig(iGotTimeConfigProvider) {
-		var fontSizeFromConfig = '22px';
+	var FONT_SIZE_SETTING, FONT_SIZE_UNIT_SETTING;
 
-		iGotTimeConfigProvider.setFontSize(fontSizeFromConfig);
-		console.info('from app config, setting font size = ' + fontSizeFromConfig);
+	function appConfig(iGotTimeConfigProvider) {
+		iGotTimeConfigProvider.setFontSize(FONT_SIZE_SETTING, FONT_SIZE_UNIT_SETTING);
 	}
 
 	return {
 		setters: [],
 		execute: function () {
+			FONT_SIZE_SETTING = 52;
+			FONT_SIZE_UNIT_SETTING = 'px';
 			appConfig.$inject = ['iGotTimeConfigProvider'];
 
 			_export('default', appConfig);
 		}
 	};
 });
-$__System.register('3', ['6', '7'], function (_export) {
+$__System.register('3', ['5', '6'], function (_export) {
                 'use strict';
 
                 var iGotTimeDirective, iGotTimeConfigProvider, I_GOT_TIME_MODULE_NAME, I_GOT_TIME_CONFIG_PROVIDER;
@@ -12072,10 +12062,100 @@ $__System.register('3', ['6', '7'], function (_export) {
                                 }
                 };
 });
-$__System.register("6", ["9", "a"], function (_export) {
-  "use strict";
+$__System.register('2', ['7'], function (_export) {
+  'use strict';
 
-  var iGotTimeController, iGotTimeTemplate;
+  var angular;
+  return {
+    setters: [function (_) {
+      angular = _['default'];
+    }],
+    execute: function () {}
+  };
+});
+$__System.register('6', ['8'], function (_export) {
+	'use strict';
+
+	var DEFAULT_SIZE_UNIT, DEFAULT_FONT_SIZE, applyFontSize;
+
+	function iGotTimeConfigProviderFct() {
+
+		var _defaultConfig = {
+			fontSize: applyFontSize(DEFAULT_FONT_SIZE, DEFAULT_SIZE_UNIT)
+		};
+		var _customization = initCustomization();
+
+		this.getFontSize = getFontSizeFct;
+		this.setFontSize = setFontSizeFct;
+		/* jshint validthis:true */
+		this.$get = iGotTimeConfig;
+
+		/**
+   * applies default config to customization
+   */
+		function initCustomization() {
+			return angular.copy(_defaultConfig);
+		}
+
+		function getFontSizeFct() {
+			return _customization.fontSize;
+		}
+
+		function setFontSizeFct(targetFontSize, targetFontSizeUnit) {
+			console.warn('applyFontSize(targetFontSize, targetFontSizeUnit); \n\t\t= ' + applyFontSize(targetFontSize, targetFontSizeUnit) + ' \n\t\tavec targetFontSize = ' + targetFontSize + '\n\t\tet targetFontSizeUnit = ' + targetFontSizeUnit);
+
+			_customization.fontSize = applyFontSize(targetFontSize, targetFontSizeUnit);
+		}
+
+		//$get injection here
+		iGotTimeConfig.$inject = [];
+		function iGotTimeConfig() {
+
+			var service = {
+				getDefaultFontSize: getDefaultFontSize,
+				getFontSize: getFontSizeFct,
+				setFontSize: setFontSizeFct
+			};
+			return service;
+
+			/**
+    * return default font size value
+    */
+			function getDefaultFontSize() {
+				return _defaultConfig.fontSize;
+			}
+			/**
+    * retuns actual customized font size
+    */
+			function getFontSizeFct() {
+				var actualFontSize = angular.copy(_customization.fontSize);
+				return actualFontSize;
+			}
+			/**
+    * set a new font size */
+			function setFontSizeFct(targetFontSize, targetFontSizeUnit) {
+				_customization.fontSize = applyFontSize(targetFontSize, targetFontSizeUnit);
+			}
+		}
+	}
+
+	return {
+		setters: [function (_) {
+			DEFAULT_SIZE_UNIT = _.DEFAULT_SIZE_UNIT;
+			DEFAULT_FONT_SIZE = _.DEFAULT_FONT_SIZE;
+			applyFontSize = _.applyFontSize;
+		}],
+		execute: function () {
+			iGotTimeConfigProviderFct.$inject = [];
+
+			_export('default', iGotTimeConfigProviderFct);
+		}
+	};
+});
+$__System.register('5', ['a', 'c', 'b'], function (_export) {
+  'use strict';
+
+  var iGotTimeController, iGotTimeTemplate, iGotTimeTimerCss;
 
   function iGotTimeDirective() {
     var directive = {
@@ -12089,124 +12169,131 @@ $__System.register("6", ["9", "a"], function (_export) {
     };
     return directive;
 
-    function linkfct() {
-      return function (scope, element, attrs, ctrl, transclude) {
-        element.on('click', function (event) {
-          event.preventDefault();
-          console.log("don't tap this timer, it is delicate!");
-        });
-      };
+    function linkfct(scope, element, attrs, ctrl, transclude) {
+
+      scope.customization = {}; //customization object
+
+      angular.extend(scope.customization, {
+        style: {
+          fontSize: 'font-size:' + scope.iGotTimeCtrl.currentFontSize + ';'
+        },
+        cssClass: {
+          iGotTimeTimerClass: iGotTimeTimerCss
+        }
+      });
+
+      console.info('from directive, font size is : ' + scope.iGotTimeCtrl.currentFontSize);
+
+      var MESSAGE = 'don\'t tap this timer, it is delicate!';
+      element.on('click', function () {
+        return console.log(MESSAGE);
+      });
     }
   }
 
   return {
-    setters: [function (_) {
-      iGotTimeController = _["default"];
-    }, function (_a) {
-      iGotTimeTemplate = _a["default"];
+    setters: [function (_a) {
+      iGotTimeController = _a['default'];
+    }, function (_c) {
+      iGotTimeTemplate = _c['default'];
+    }, function (_b) {
+      iGotTimeTimerCss = _b.iGotTimeTimerCss;
     }],
     execute: function () {
       iGotTimeDirective.$inject = [];
 
-      _export("default", iGotTimeDirective);
+      _export('default', iGotTimeDirective);
     }
   };
 });
-$__System.register("7", [], function (_export) {
-	"use strict";
+$__System.register('8', [], function (_export) {
+	'use strict';
 
-	function iGotTimeConfigProviderFct() {
-
-		this.customization = customizationFct;
-		this.setFontSize = setFontSizeFct;
-		/* jshint validthis:true */
-		this.$get = iGotTimeConfig;
-
-		function customizationFct() {
-			return function () {
-				var _defaultConfig = {
-					fontSize: "12px"
-				};
-				return _defaultConfig;
-			};
-		}
-
-		function setFontSizeFct(fontSize) {
-			var _this = this;
-
-			return function (fontSize) {
-				return _this.customization.fontSize = fontSize;
-			};
-		}
-
-		//$get injection here
-		iGotTimeConfig.$inject = [];
-		function iGotTimeConfig() {
-
-			var service = {
-				getFontSize: getFontSizeFct,
-				setFontSize: setFontSizefct
-			};
-			return service;
-
-			function getFontSizeFct() {
-				var _this2 = this;
-
-				return function () {
-					var actualFontSize = angular.copy(_this2.customization.fontSize);
-					return actualFontSize;
-				};
-			}
-
-			function setFontSizefct(fontSize) {
-				var _this3 = this;
-
-				return function (fontSize) {
-					return _this3.setFontSize(fontSize);
-				};
-			}
-		}
-	}
-
+	var FONT_SIZE_UNITS, DEFAULT_SIZE_UNIT, DEFAULT_FONT_SIZE, isValidFontSizeUnit, applyFontSize;
 	return {
 		setters: [],
 		execute: function () {
-			iGotTimeConfigProviderFct.$inject = [];
+			FONT_SIZE_UNITS = ['px', 'em'];
+			DEFAULT_SIZE_UNIT = FONT_SIZE_UNITS[0];
+			DEFAULT_FONT_SIZE = 12;
 
-			_export("default", iGotTimeConfigProviderFct);
+			/**
+    * check is targetFontSizeUnit exists in managed font size (FONT_SIZE_UNITS)
+    */
+
+			isValidFontSizeUnit = function isValidFontSizeUnit(targetFontSizeUnit) {
+				var isValid = false;
+				if (angular.isDefined(targetFontSizeUnit)) {
+					angular.forEach(FONT_SIZE_UNITS, function (value) {
+						isValid = targetFontSizeUnit === value ? isValid || true : isValid || false;
+					});
+				}
+				return isValid;
+			};
+
+			/**
+    * return valid font-size (string)
+    * 
+    * NOTE : To return target font size and unit : 
+    * - target font-size 
+    * - target font size unit 
+    * -> must be both valid
+    */
+
+			applyFontSize = function applyFontSize(targetFontSize, targetFontSizeUnit) {
+				var fontSizeApplied = '' + DEFAULT_FONT_SIZE + DEFAULT_SIZE_UNIT;
+
+				if (isValidFontSizeUnit(targetFontSizeUnit)) {
+					if (angular.isDefined(targetFontSize)) {
+						fontSizeApplied = '' + targetFontSize + targetFontSizeUnit;
+					}
+				}
+				return fontSizeApplied;
+			};
+
+			_export('DEFAULT_SIZE_UNIT', DEFAULT_SIZE_UNIT);
+
+			_export('DEFAULT_FONT_SIZE', DEFAULT_FONT_SIZE);
+
+			_export('applyFontSize', applyFontSize);
 		}
 	};
 });
-$__System.register('9', ['b', 'c'], function (_export) {
-  var _createClass, _classCallCheck, ONE_SECOND, UserListController;
+$__System.register('a', ['d', 'e'], function (_export) {
+  var _createClass, _classCallCheck, ONE_SECOND, iGotTimeController;
 
   return {
-    setters: [function (_b) {
-      _createClass = _b['default'];
-    }, function (_c) {
-      _classCallCheck = _c['default'];
+    setters: [function (_d) {
+      _createClass = _d['default'];
+    }, function (_e) {
+      _classCallCheck = _e['default'];
     }],
     execute: function () {
       'use strict';
 
       ONE_SECOND = 1000;
 
-      UserListController = (function () {
-        function UserListController($timeout, iGotTimeConfig) {
-          _classCallCheck(this, UserListController);
+      iGotTimeController = (function () {
+        function iGotTimeController($timeout, iGotTimeConfig) {
+          _classCallCheck(this, iGotTimeController);
 
           this.$timeout = $timeout;
-          this.timer = this.newTime();
-          this.timeoutPromise = {};
           this.iGotTimeConfig = iGotTimeConfig;
 
-          //test provider is ok : set font size :
-          this.setFontSize('42px');
+          this.init();
           //let's go infinite count :
           this.oneAnotherSec();
         }
 
-        _createClass(UserListController, [{
+        _createClass(iGotTimeController, [{
+          key: 'init',
+          value: function init() {
+            this.timer = this.newTime();
+            this.timeoutPromise = {};
+
+            this.currentFontSize = this.iGotTimeConfig.getFontSize();
+          }
+        }, {
           key: 'newTime',
           value: function newTime() {
             return new Date();
@@ -12223,20 +12310,27 @@ $__System.register('9', ['b', 'c'], function (_export) {
               return _this.oneAnotherSec();
             }, ONE_SECOND);
           }
-        }, {
-          key: 'setFontSize',
-          value: function setFontSize(fontSize) {
-            console.info('using provider from controller setting font to ' + fontSize);
-            this.iGotTimeConfig.setFontSize(fontSize);
-          }
         }]);
 
-        return UserListController;
+        return iGotTimeController;
       })();
 
-      UserListController.$inject = ['$timeout', 'iGotTimeConfig'];
+      iGotTimeController.$inject = ['$timeout', 'iGotTimeConfig'];
 
-      _export('default', UserListController);
+      _export('default', iGotTimeController);
+    }
+  };
+});
+$__System.register("b", [], function (_export) {
+  "use strict";
+
+  var iGotTimeTimerCss;
+  return {
+    setters: [],
+    execute: function () {
+      iGotTimeTimerCss = "iGotTimeTimerNeon";
+
+      _export("iGotTimeTimerCss", iGotTimeTimerCss);
     }
   };
 });
