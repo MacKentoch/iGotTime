@@ -13,8 +13,8 @@ System.config({
     "npm:*": "jspm_packages/npm/*"
   },
 
-  map: {
-    "angular": "github:angular/bower-angular@1.4.5",
+  map: {    ///Users/kentor/GitProjects/iGotTime/src/app/angularAdapter.js
+    "angular": "src/app/angularAdapter", //"github:angular/bower-angular@1.4.5",
     "babel": "npm:babel-core@5.8.24",
     "babel-runtime": "npm:babel-runtime@5.8.24",
     "core-js": "npm:core-js@1.1.4",
