@@ -18,13 +18,16 @@ A super nice `angular js (ES6)` `timer`.
 - add it in a script tag as usual.
 
 
-##Note on external dependencies
+##Note : JSPM bundle sfx and external dependencies 
 
-> When need to `Bundle sfx` and don't want to include external dependecies (example you write a shared angular module).
+> When need to `Bundle sfx` and don't want to include external dependencies (*example you write a shared angular module*).
 
-Just tell System js to wait for these dependecies :
+*Just tell SystemJS to wait for these dependecies :*
 
 ```javascript
+//don't "jspm install angular" 
+
+//But :
 //file : adapters/jquery.js
 adapters/angular.js
 export default window.angular;
@@ -36,6 +39,8 @@ System.config({
     "jquery": "adapters/angular"
   }
 });
+
+//then don't forget to add angular in script tag in your html
 ```
 
 ##Histo
