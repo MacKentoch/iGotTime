@@ -4,6 +4,6 @@ angular.element(document).ready(function() {
   /**
    * working with bundles sfx only
    */
-  angular.bootstrap(document, [mainModule.name], { strictDi: true });
-  //angular.bootstrap(document, [mainModule.name]);
+  //angular.bootstrap(document, [mainModule.name], { strictDi: true });
+  angular.bootstrap(document, [mainModule.name]);
 });

@@ -1,4 +1,5 @@
-import './vendor';
+//import './vendor';
+//import './angularAdapter';
 import iGotTimeModule from './components/iGotTime/iGotTime.module';
 import appConfig from './config/main.config';
 
