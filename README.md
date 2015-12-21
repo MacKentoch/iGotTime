@@ -25,18 +25,17 @@ A super nice `angular js (ES6)` `timer`.
 *Just tell SystemJS to wait for these dependecies :*
 
 ```javascript
-//don't "jspm install angular" 
+//don't "jspm install angular"
 
-//But :
-//file : adapters/jquery.js
-adapters/angular.js
-export default window.angular;
+//But create an adapter file :
+//example file : adapters/angular.js for angular js
+export default window.angular; //content of adapters/angular.js
 
 
-//file : config.js
+//then in config.js tell jspm to map angular dependency to adapters/angular.js
 System.config({
   map: {
-    "jquery": "adapters/angular"
+    "angular": "adapters/angular"
   }
 });
 
